@@ -102,7 +102,6 @@ if prompt := st.chat_input():
             if fn_name == "send_email":
                 args = json.loads(fn_args)
                 st.markdown("邮件内容如下：")
-                st.markdown(f"发件人: {args['FromEmail']}")
                 st.markdown(f"收件人: {args['Recipients']}")
                 st.markdown(f"主题: {args['Subject']}")
                 st.markdown(f"内容: {args['Body']}")
