@@ -1,5 +1,4 @@
 import os
-from dotenv import load_dotenv
 
 from openai import OpenAI
 import smtplib
@@ -13,8 +12,6 @@ import streamlit as st
 
 GPT_MODEL = "gpt-4o-mini"
 
-load_dotenv()
-# 获取环境变量
 
 client = OpenAI(
     api_key='sk-u3LMNOLlKjtflTBan2daXvuc309dFO8IP51vro22vXLaAnUz',  # 混元 APIKey
@@ -32,10 +29,6 @@ tools = [
             "parameters": {
                 "type": "object",
                 "properties": {
-                    "FromEmail": {
-                        "type": "string",
-                        "description": "发件人邮箱地址",
-                    },
                     "Subject": {
                         "type": "string",
                         "description": "邮件主题",
@@ -84,7 +77,7 @@ def send_email(sender_email, recipient_email, subject, body):
 
     # 创建 SMTP_SSL 会话
     with smtplib.SMTP_SSL("smtp.qq.com", 465) as server:
-        server.login(sender_email, "verrhcjemchschbd")
+        server.login(sender_email, "qsmeodnmfwmkejij")
         text = message.as_string()
         server.sendmail(sender_email, recipient_email, text)
         server.quit()

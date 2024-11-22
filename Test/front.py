@@ -87,7 +87,7 @@ if prompt := st.chat_input():
 
             def confirm_send_fn():
                 send_email(
-                    sender_email=args["FromEmail"],
+                    sender_email= "2127742583@qq.com",
                     recipient_email=args["Recipients"],
                     subject=args["Subject"],
                     body=args["Body"],
